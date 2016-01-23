@@ -5,7 +5,7 @@ class DeafGrandma
   def initialize
    @g_count = 0
   end
-#random
+
   def says(input = nil)
     if input == "GOODBYE!"
       @g_count += 1
