@@ -18,6 +18,7 @@ class BubbleSortTest < Minitest::Test
     bubble = BubbleSort.new[1, 0, 2, 3, 4, 5]
     bubble.sort
     assert_equal 1, bubble[1]
+    assert_equal, [0, 1, 2, 3, 4, 5], bubble.sort 
   end
 
 end

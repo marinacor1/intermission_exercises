@@ -7,9 +7,13 @@ class BubbleSort
 
   def sort
     previous_index = 0
-    current_index
-    if bubble[previous_index] > bubble[current_index]
-      
+    current_index = previous_index + 1
+    if bubble[current_index] < bubble[previous_index]
+      previous = bubble[previous_index]
+      current = bubble[current_index]
+      bubble[previous_index] = current
+      bubbple[current_index] = previous
+    end 
   end
 
 
