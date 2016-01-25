@@ -41,7 +41,7 @@ class BubbleSortTest < Minitest::Test
     assert_equal "Final result : [0, 1, 2, 3, 4, 5] Swaps: 1", bubble.results(array)
   end
 
-  def test_result_works_with_various_arrays
+  def test_result_works_with_more_swaps
     bubble = BubbleSort.new
     array = bubble.sort([5, 4, 3, 2, 1, 0])
     assert_equal "Final result : [0, 1, 2, 3, 4, 5] Swaps: 15", bubble.results(array)
