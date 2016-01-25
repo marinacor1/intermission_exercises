@@ -3,10 +3,8 @@ class Bottles
 
   def song(number = 99)
     output = ""
-    # binding.pry
     while number > 1
-      output = output.concat("#{number} bottles of beer on the wall, #{number} bottles of beer.
-      Take one down and pass it around,")
+      output = output.concat("#{number} bottles of beer on the wall, #{number} bottles of beer. Take one down and pass it around,")
       number -= 1
       output
     end
