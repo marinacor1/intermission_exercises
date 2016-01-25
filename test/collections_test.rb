@@ -3,15 +3,14 @@ require './lib/collections'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-class CollectionsTest < Minitest::Test
+class AgeTest < Minitest::Test
   def test_collections_instantiates
-    collection = Collections.new
-    collection.instance_of?(Collections)
+    collection = Age.new
+    collection.instance_of?(Age)
   end
 
   def test_method_organizes_names_by_age_order
-    skip
-    collection = Collections.new
+    collection = Age.new
     data = [
       ['Frank', 33],
       ['Stacy', 15],
@@ -25,7 +24,7 @@ class CollectionsTest < Minitest::Test
 
   def test_method_organizes_names_by_age_order
     skip
-    collection = Collections.new
+    collection = Age.new
     data = [
       ['Frank', 33],
       ['Stacy', 15],
@@ -39,7 +38,7 @@ class CollectionsTest < Minitest::Test
 
   def test_method_organizes_names_by_age_order_alphabetically
     skip
-    collection = Collections.new
+    collection = Age.new
     data = [
       ['Frank', 33],
       ['Stacy', 15],
@@ -53,8 +52,17 @@ class CollectionsTest < Minitest::Test
 
   def test_hash_for_names_age
     skip
-    
-
+    collection = Age.new
+    data = [
+      ['Frank', 33],
+      ['Stacy', 15],
+      ['Juan', 24],
+      ['Dom', 32],
+      ['Steve', 24],
+      ['Jill', 24]
+    ]
+    hash = {15 => ['Stacy'], 24 => ['Juan', 'Steve', 'Jill'], 32 => ['Dom'], 33 => ['Frank'] }
+    assert_equal hash, collection.names_hash(data)
   end
 
 end
