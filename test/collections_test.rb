@@ -36,7 +36,6 @@ class AgeTest < Minitest::Test
   end
 
   def test_method_organizes_names_by_age_order_alphabetically
-    skip
     collection = Age.new
     data = [
       ['Frank', 33],
@@ -46,7 +45,7 @@ class AgeTest < Minitest::Test
       ['Steve', 24],
       ['Jill', 24]
     ]
-    assert_equal ['Stacy (15)', 'Jill(24)', 'Juan(24)', 'Steve (24)', 'Dom (32)', 'Frank (33)'], collection.name_age_alpha(data)
+    assert_equal ['Stacy (15)', 'Jill (24)', 'Juan (24)', 'Steve (24)', 'Dom (32)', 'Frank (33)'], collection.name_age_alpha(data)
   end
 
   def test_hash_for_names_age

@@ -6,8 +6,8 @@ class BubbleSort
     current_index = 1
     @swap = 0
     counter = 0
-    # binding.pry
-    while counter < (bubble_array.length - 1)
+    if bubble_array != bubble_array.sort
+      while counter < (bubble_array.length - 1)
       while current_index < bubble_array.length
         if bubble_array[current_index] < bubble_array[previous_index]
           @swap += 1
@@ -28,6 +28,7 @@ class BubbleSort
       end
       bubble_array
     end
+  end
 
     def results(bubble_array)
       result = bubble_array
