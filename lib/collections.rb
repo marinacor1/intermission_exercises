@@ -38,6 +38,10 @@ class Age
       counter += 1
     end
      final_list
-end
+  end
+
+  def names_hash(data)
+    ages = data.sort.group_by {|name, age| age }
+  end
 
 end

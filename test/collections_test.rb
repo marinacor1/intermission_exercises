@@ -49,7 +49,6 @@ class AgeTest < Minitest::Test
   end
 
   def test_hash_for_names_age
-    skip
     collection = Age.new
     data = [
       ['Frank', 33],
@@ -59,8 +58,31 @@ class AgeTest < Minitest::Test
       ['Steve', 24],
       ['Jill', 24]
     ]
-    hash = {15 => ['Stacy'], 24 => ['Juan', 'Steve', 'Jill'], 32 => ['Dom'], 33 => ['Frank'] }
+    hash = {32=>[["Dom", 32]], 33=>[["Frank", 33]], 24=>[["Jill", 24], ["Juan", 24], ["Steve", 24]], 15=>[["Stacy", 15]]}
     assert_equal hash, collection.names_hash(data)
   end
+
+end
+
+class StateTest < Minitest::Test
+
+  def test_whether_state_instantiates
+    state = State.new
+    assert state.instance_of?(State)
+  end
+
+  def test_hash_connects_city_and_state
+    skip
+  states = {"Oregon" => "OR",
+          "Alabama" => "AL",
+          "New Jersey" => "NJ",
+          "Colorado" => "CO"}
+  capitals = {"OR" => "Salem",
+            "AL" => "Montgomery",
+            "NJ" => "Trenton",
+            "CO" => "Denver"}
+          end
+
+
 
 end
