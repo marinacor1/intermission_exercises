@@ -2,38 +2,34 @@ class BubbleSort
   attr_accessor :bubble_array
 
   def sort(bubble_array)
-        # binding.pry
     previous_index = 0
     current_index = 1
     swap = 0
-    max_index = bubble_array.length - 1 #4
-    #loop_max = (bubble_array.length * (bubble_array.length- 1)) + 1
-    #21
-      # binding.pry
-     while current_index < max_index
-      if bubble_array[current_index] < bubble_array[previous_index]
-        #3 <
-        swap += 1
-        previous = bubble_array[previous_index]
-        current = bubble_array[current_index]
-        bubble_array[previous_index] = current
-        bubble_array[current_index] = previous
-        previous_index +=1
-        current_index +=1
-          # if previous_index + 1 < max_index #might be wrong
-          #  previous_index +=1
-          #  current_index +=1
-          # else
-          #   previous_index = 0
-          #   current_index = 1
-          # end
-      else
-        previous_index +=1
-        current_index +=1
+    counter = 0
+    # binding.pry
+    while counter < (bubble_array.length - 1)
+      while current_index < bubble_array.length
+        if bubble_array[current_index] < bubble_array[previous_index]
+          swap += 1
+          previous = bubble_array[previous_index]
+          current = bubble_array[current_index]
+          bubble_array[previous_index] = current
+          bubble_array[current_index] = previous
+          previous_index +=1
+          current_index +=1
+        else
+          previous_index +=1
+          current_index +=1
+        end
       end
+            # bubble_array
+            previous_index = 0
+            current_index = 1
+            counter += 1
+      end
+      bubble_array
     end
-          bubble_array
-    end
+
  end
 
 # Pre-Sequence Previous Current Swap? Post-Sequence

@@ -16,7 +16,6 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_sort_works_with_more_complicated_array
-    # skip
     bubble = BubbleSort.new
     assert_equal [0, 1, 2, 3, 4, 5], bubble.sort([1, 0, 2, 4, 3, 5])
   end
@@ -25,7 +24,5 @@ class BubbleSortTest < Minitest::Test
     bubble = BubbleSort.new
     assert_equal [0, 1, 3, 4, 5], bubble.sort([4, 3, 5, 0, 1])
   end
-
-
 
 end
