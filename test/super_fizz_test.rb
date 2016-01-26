@@ -9,6 +9,12 @@ class SuperFizzTest < Minitest::Test
    sf.instance_of?(SuperFizz)
   end
 
+  def iterates_from_0_to_1000
+   skip
+   sf = SuperFizz.new
+   assert_equal 1000, sf.number
+  end
+
   def test_prints_number_divisible_by_3_5_7_with_SFB
     skip
     sf = SuperFizz.new
