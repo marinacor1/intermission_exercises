@@ -82,7 +82,22 @@ class Scrabble
     scored_array = word.map do |letter|
       "#{letter} has the value #{@scores[letter]}"
     end
+  end
 
+  def word_score(word)
+    scored_array = word.upcase.chars.map do |letter|
+      "#{letter} has the value #{@scores[letter]}"
+    end
+
+  end
+
+  def total_score(word)
+    # pry
+    scored_array = word.upcase.chars.map do |letter|
+      scores[letter]
+    end
+    total = scored_array.inject(:+)
+    "#{word} has the total score #{total}"
   end
 
 
