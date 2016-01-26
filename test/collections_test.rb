@@ -113,12 +113,57 @@ class StateTest < Minitest::Test
 end
 
 class ScrabbleTest < Minitest::Test
-  word = ['H', 'E', 'L', 'L', 'O']
-  scrabby = Scrabble.new(word)
-  assert_equal "H has the value 4
-  E has the value 1
-  L has the value 1
-  L has the value 1
-  O has the value 1", scrabbly.letter_score
+  def test_scrabble_instantiates
+    word = ['H', 'E', 'L', 'L', 'O']
+    scrabby = Scrabble.new
+    scrabby.instance_of?(Scrabble)
+  end
+
+  def test_scores_each_letter_and_gives_output
+    word = ['H', 'E', 'L', 'L', 'O']
+    scrabby = Scrabble.new
+    output =  ["H has the value 4", "E has the value 1", "L has the value 1", "L has the value 1", "O has the value 1"]
+    assert_equal output, scrabby.letter_score(word)
+  end
+
+  def test_scores_each_letter_for_nonesensical_word
+    skip
+    word = ['R', 'W', 'K', '0']
+    scrabby = Scrabble.new
+    assert_equal "R has the value 1
+    W has the value 4
+    K has the value 5
+    O has the value 1", scrabby.letter_score(word)
+  end
+
+  def test_can_find_score_for_letters_in_a_string
+    skip
+    word = 'hello'
+    scrabby = Scrabble.new
+    assert_equal 'H has the value 4
+    E has the value 1
+    L has the value 1
+    L has the value 1
+    O has the value 1', scrabby.word_score(word)
+  end
+
+  def test_can_find_score_for_letters_in_different_string
+    skip
+    word = 'wats'
+    scrabby = Scrabble.new
+    assert_equal 'W has the value 4
+    A has the value 1
+    T has the value 1
+    S has the value 1', scrabby.word_score(word)
+  end
+
+  def test_gives_total_score_for_word
+    skip
+    word = 'hello'
+    scrabby = Scrabble.new
+    assert_equal 'hello has the total score 8', scrabby.total_score(word)
+  end
+
+
 
 end
