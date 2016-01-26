@@ -98,7 +98,6 @@ class StateTest < Minitest::Test
   end
 
   def test_for_capital_given_state
-    skip
     state = State.new
     states = {"Oregon" => "OR",
               "Alabama" => "AL",
@@ -108,9 +107,18 @@ class StateTest < Minitest::Test
                 "AL" => "Montgomery",
                 "NJ" => "Trenton",
                 "CO" => "Denver"}
-     assert_equal "Denver", state.better_connect(states, capitals, "Denver")
+     assert_equal "Colorado", state.city_connect(states, capitals, "Denver")
   end
 
+end
 
+class ScrabbleTest < Minitest::Test
+  word = ['H', 'E', 'L', 'L', 'O']
+  scrabby = Scrabble.new(word)
+  assert_equal "H has the value 4
+  E has the value 1
+  L has the value 1
+  L has the value 1
+  O has the value 1", scrabbly.letter_score
 
 end

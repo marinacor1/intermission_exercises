@@ -43,7 +43,6 @@ class Age
   def names_hash(data)
     ages = data.sort.group_by {|name, age| age }
   end
-
 end
 
 class State
@@ -56,6 +55,11 @@ class State
     end
   end
 
-  def better_connect(states, capitals, input_state)
+  def city_connect(states, capitals, input_city)
+    correct_hash = capitals.select{|state, city| city == input_city}
+    state_initial = correct_hash.keys
+    correct_state_hash = states.select {|city, state| state_initial[0] == state}
+    correct_state_hash.keys[0]
+  end
 
 end
