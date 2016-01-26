@@ -87,6 +87,7 @@ class Scrabble
   def word_score(word)
     scored_array = word.upcase.chars.map do |letter|
       "#{letter} has the value #{@scores[letter]}"
+      # scored_array[0]
     end
 
   end
