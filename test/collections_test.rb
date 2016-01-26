@@ -72,16 +72,44 @@ class StateTest < Minitest::Test
   end
 
   def test_hash_connects_city_and_state
+    state = State.new
+    states = {"Oregon" => "OR",
+              "Alabama" => "AL",
+              "New Jersey" => "NJ",
+              "Colorado" => "CO"}
+    capitals = {"OR" => "Salem",
+                "AL" => "Montgomery",
+                "NJ" => "Trenton",
+                "CO" => "Denver"}
+     assert_equal "Salem", state.connect(states, capitals, "Oregon")
+  end
+
+  def test_for_unknown_state
+    state = State.new
+    states = {"Oregon" => "OR",
+              "Alabama" => "AL",
+              "New Jersey" => "NJ",
+              "Colorado" => "CO"}
+    capitals = {"OR" => "Salem",
+                "AL" => "Montgomery",
+                "NJ" => "Trenton",
+                "CO" => "Denver"}
+     assert_equal "Unknown", state.connect(states, capitals, "Texas")
+  end
+
+  def test_for_capital_given_state
     skip
-  states = {"Oregon" => "OR",
-          "Alabama" => "AL",
-          "New Jersey" => "NJ",
-          "Colorado" => "CO"}
-  capitals = {"OR" => "Salem",
-            "AL" => "Montgomery",
-            "NJ" => "Trenton",
-            "CO" => "Denver"}
-          end
+    state = State.new
+    states = {"Oregon" => "OR",
+              "Alabama" => "AL",
+              "New Jersey" => "NJ",
+              "Colorado" => "CO"}
+    capitals = {"OR" => "Salem",
+                "AL" => "Montgomery",
+                "NJ" => "Trenton",
+                "CO" => "Denver"}
+     assert_equal "Denver", state.better_connect(states, capitals, "Denver")
+  end
 
 
 

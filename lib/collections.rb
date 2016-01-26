@@ -45,3 +45,17 @@ class Age
   end
 
 end
+
+class State
+  def connect(states, capitals, input_state)
+    if states.include?(input_state)
+      state_short = states[input_state]
+      capitals[state_short]
+    else
+      "Unknown"
+    end
+  end
+
+  def better_connect(states, capitals, input_state)
+
+end
