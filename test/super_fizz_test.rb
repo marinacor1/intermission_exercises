@@ -10,16 +10,15 @@ class SuperFizzTest < Minitest::Test
   end
 
   def iterates_from_0_to_1000
-   skip
+  skip
    sf = SuperFizz.new
    assert_equal 1000, sf.number
   end
 
   def test_prints_number_divisible_by_3_5_7_with_SFB
-    skip
     sf = SuperFizz.new
     #105
-    assert_equal 'SuperFizzBuzz', sf.machine
+    assert_equal 'SuperFizzBuzz', sf.machine(105)
   end
 
   def test_prints_sf_if_div_by_3_and_7
@@ -47,7 +46,7 @@ class SuperFizzTest < Minitest::Test
     skip
     sf = SuperFizz.new
     #5
-    assert_equal 'SuperFizzBuzz', sf.machine
+    assert_equal 'Buzz', sf.machine
   end
 
   def test_prints_s_if_div_by_7
