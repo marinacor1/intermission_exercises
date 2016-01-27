@@ -25,18 +25,10 @@ class SuperFizz
 
   def fizz(num)
     output = ""
-    if num%7 ==0
-      output = "Super"
-    end
-    if num%3 == 0
-      output += "Fizz"
-    end
-    if num%5 == 0
-      output += "Buzz"
-    end
-    if output.empty?
-      output = num
-    end
+    output = "Super" if num%7 ==0
+    output += "Fizz" if num%3 == 0
+    output += "Buzz" if num%5 == 0
+    output = num if output.empty?
     output
   end
     # if num%3 == 0 && num%5 == 0 && num%7 ==0
