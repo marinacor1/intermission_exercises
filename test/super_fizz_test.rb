@@ -35,6 +35,7 @@ class SuperFizzTest < Minitest::Test
   end
 
   def test_prints_number_divisible_by_3_5_with_SFB
+    skip 
     sf = SuperFizz.new
     assert_equal 'Fizz', sf.machine(15)[0]
   end
