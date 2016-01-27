@@ -10,9 +10,8 @@ class SuperFizzTest < Minitest::Test
   end
 
   def iterates_from_0_to_1000
-   skip
    sf = SuperFizz.new
-   assert_equal 1000, sf.number
+   assert_equal 1001, sf.machine.length
   end
 
   def test_prints_number_divisible_by_3_5_7_with_SFB
@@ -25,9 +24,19 @@ class SuperFizzTest < Minitest::Test
     assert_equal 'Fizz', sf.machine(108)[0]
   end
 
+  def test_prints_number_divisible_by_3_with_SFB
+    sf = SuperFizz.new
+    assert_equal 2, sf.machine(2)[0]
+  end
+
   def test_prints_sf_if_div_by_3_and_7
     sf = SuperFizz.new
     assert_equal 'SuperFizz', sf.machine(21)[0]
+  end
+
+  def test_prints_number_divisible_by_3_5_with_SFB
+    sf = SuperFizz.new
+    assert_equal 'Fizz', sf.machine(15)[0]
   end
 
   # def test_machine_mapping_works

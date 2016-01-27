@@ -22,28 +22,35 @@ class SuperFizz
     output_array = []
     # binding.pry
     while number < 1001
-      if number%7 == 0
-        output = 'Super'
-        if number %3 == 0
-          output = output.concat('Fizz')
-        end
-        if number %5 == 0
-          output = output.concat('Buzz')
-        end
-      elsif number%5 == 0 && number%7 !=0
-        output = 'Buzz'
-          if number%3 == 0
-            output = output.concat('Fizz')
-          end
-      elsif number%3 == 0 && number%7 !=0 && number%5 != 0
-        output = 'Fizz'
-      else
-        output = number
-      end
-        output_array << output
-        number += 1
-      end
+      output = fizz(number)
+      output_array << output
+      number += 1
+    end
     output_array
   end
 
+
+  # def machine(number = [])
+  #   number = (0..1000).to_a
+  #   number.each {|num| fizz(num)}
+  # end
+
+  def fizz(num)
+    if num%3 == 0 && num%5 == 0 && num%7 ==0
+      "SuperFizzBuzz"
+    elsif num%3 == 0 && num%7 == 0
+      "SuperFizz"
+    elsif num%5 == 0 && num%7 == 0
+      "SuperBuzz"
+    elsif num%3 == 0
+      "Fizz"
+    elsif num%5 == 0
+      "Buzz"
+    elsif num%7 == 0
+      "Super"
+    else
+      num
+    end
+
+  end
 end
