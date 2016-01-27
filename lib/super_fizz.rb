@@ -18,21 +18,13 @@ class SuperFizz
   #   end
   # end
 
-  def machine(number =  0)
-    output_array = []
-    # binding.pry
-    while number < 1001
-      output = fizz(number)
-      output_array << output
-      number += 1
-    end
-    output_array
+  def machine(number = 0)
+    numbers = (number..1000).to_a
+    output_array = numbers.map {|num| fizz(num)}
   end
 
 
   # def machine(number = [])
-  #   number = (0..1000).to_a
-  #   number.each {|num| fizz(num)}
   # end
 
   def fizz(num)
