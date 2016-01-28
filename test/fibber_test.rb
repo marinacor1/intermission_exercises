@@ -43,10 +43,12 @@ meta omg: true
     f = Fibber.new
     assert_equal 21, f.quantity_test(9)
   end
-
+meta omgoh: true
   def test_output_is_five_elements
-    # skip
     f = Fibber.new
-    assert_equal 5, f.quantity
+    output = "0 1 1 2 3
+5 8 13 21 34
+55 89 144 233 377 "
+    assert_equal output, f.quantity
   end
 end

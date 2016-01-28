@@ -13,24 +13,29 @@ class Fibber
 
   def quantity(num = 15)
     main_array = [0,1]
+    output = ""
     while main_array.length < num do
       initial_array = [main_array[-2], main_array[-1]]
       main_array << initial_array.inject(:+)
       main_array[-1]
     end
-    count = 0
+      count = 0
       main_array.each do |number|
-        if count < 6
-        print "#{number} "
-         count += 1
-       else puts "#{number} "
-          count = 0
+        # binding.pry
+        if count < 5
+          output +=  "#{number} "
+          count += 1
+        else
+          output += "\n #{number} "
+          count = 1
         end
+      end
+       output
     end
-    # main_array[-1]
+
+
   end
 
-end
 #initial array is 0 and 1
 #next number is sum of two previous nums
 #next num gets pushed into initial array
