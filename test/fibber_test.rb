@@ -14,7 +14,7 @@ class FibberTest < Minitest::Test
     output = "0 1 1 "
      assert_equal output, f.quantity(3)
   end
-meta omg: true
+
   def test_fourth_num_is_sum_of_1_and_1
     f = Fibber.new
     output = "0 1 1 2 "
@@ -61,7 +61,7 @@ meta omg: true
     assert_equal output, f.quantity(9)
   end
   def test_output_is_five_elements
-    skip 
+    skip
     f = Fibber.new
     output =
     "0 1 1 2 3
