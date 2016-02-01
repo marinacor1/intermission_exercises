@@ -6,15 +6,15 @@ class BasicStack
     @stack = []
   end
 
-  def push(new_element)
+  def push_method(new_element)
     @stack += [new_element]
   end
 
-  def pop
+  def pop_method
     @stack.delete(@stack[-1])
   end
 
-  def count_method(stack)
+  def count_method
     count = 0
     @stack.each {|element| count +=1}
     count
