@@ -16,7 +16,7 @@ class Fibber
   def print_lines(main_array)
     @output = ""
     count = 0
-    # @output = main_array.each_slice(5) { |num| p num.to_s}
+    #  @output = main_array.each_slice(5) { |num| p num.to_s}
 
     main_array.each do |number|
       if count < 5
