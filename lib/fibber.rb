@@ -1,6 +1,6 @@
 require 'pry'
 class Fibber
-  attr_accessor :main_array
+  attr_accessor :main_array, :output
 
   def quantity(num = 15)
     main_array = [0,1]
@@ -10,14 +10,24 @@ class Fibber
       main_array[-1]
     end
       print_lines(main_array)
+       @output
   end
 
   def print_lines(main_array)
-    output = ""
+    @output = ""
     count = 0
-    output = main_array.each_slice(5) { |num| num.to_s}
+    # @output = main_array.each_slice(5) { |num| p num.to_s}
+
+    main_array.each do |number|
+      if count < 5
+        @output +=  "#{number} "
+        count += 1
+      else
+        @output += "\n #{number} "
+        count = 1
+      end
     output
-    binding.pry
+    end
   end
 
 end
